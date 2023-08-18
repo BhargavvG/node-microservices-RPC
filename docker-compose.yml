@@ -1,0 +1,27 @@
+services:
+# Reverse Proxy
+    nginx:
+        build: ./nginx
+        links:
+            - products:products
+            - users:users
+        ports:
+            - "80:80"
+
+# NodeJS RESTful API Microservice
+    products:
+        build: ./products
+        ports:
+            - "5000:5000"
+        environment:
+            NODE_ENV: production
+            IP: 0.0.0.0
+            PORT: 5000
+    users:
+        build: ./users
+        ports:
+            - "5001:5000"
+        environment:
+            NODE_ENV: production
+            IP: 0.0.0.0
+            PORT: 5001
