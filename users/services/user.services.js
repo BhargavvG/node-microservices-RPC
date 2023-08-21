@@ -1,4 +1,4 @@
-const UsersModel = require('../models/UsersModel');
+const UsersModel = require('../models/Users.model');
 
 const createUser = async (user) => {
   try {
@@ -29,7 +29,7 @@ const deleteUser = async (userId) => {
 };
 
 const getUser = async (query) => {
-  const result = await UsersModel.findOne({userId})
+  const result = await UsersModel.findOne(query)
   return { data: result };
 };
 

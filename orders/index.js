@@ -3,16 +3,16 @@ const cors = require("cors");
 require("dotenv").config();
 require("./utils/db");
 const app = express();
-const UserRoutes = require("./router")
+const OrderRoutes = require("./router")
 app.use(express.json());
 app.use(cors());
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5002;
 console.log(process.env.PORT)
-app.get("/users", (req,res)=>{
-    res.json({message: `Users route from users app on: ${port}`})
+app.get("/orders", (req,res)=>{
+    res.json({message: `Orders route from orders app on: ${port}`})
 })
-app.use("/users", UserRoutes)
+app.use("/orders", OrderRoutes)
 app.listen(port, () => {
   console.log(`Listening: http://localhost:${port}`);
 });

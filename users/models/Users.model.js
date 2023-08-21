@@ -10,6 +10,12 @@ const UsersSchema = new Schema({
         required: true,
         unique: true,
     },
+    email:{
+        type: String
+    },
+    phoneNumber:{
+        type: Number
+    },
     created_at: {
         type: Date,
         default: Date.now()

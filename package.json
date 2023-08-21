@@ -1,0 +1,19 @@
+{
+  "name": "microservices-rpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "users": "nodemon users/index.js",
+    "products": "nodemon products/index.js",
+    "orders": "nodemon orders/index.js",
+    "start": "concurrently --kill-others \"npm run users\" \"npm run products\" \"npm run orders\""
+  },
+  "author": "Bhargav Gangadharani",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
