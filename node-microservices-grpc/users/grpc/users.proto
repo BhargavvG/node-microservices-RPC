@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc getUser (UserRequest) returns (UserResponse);
+  rpc addOrder (OrderRequest) returns (OrderResponse);
+}
+
+message UserRequest {
+  string userId = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+}
+
+message OrderRequest {
+  string orderId = 1;
+  string quantity = 2;
+}
+  
+message OrderResponse {
+  string orderId = 1;
+  string status = 2;
+}
